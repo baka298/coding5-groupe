@@ -43,7 +43,7 @@ class ProduitController extends Controller
         $newproduit->prix = $request->prix;
         $newproduit->save();
 
-        return view('article');
+        return view('home');
     }
 
     /**
@@ -54,7 +54,7 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-        return view ('home',compact('produit'));
+        return view ('produit-show',compact('produit'));
     }
 
     /**
@@ -77,16 +77,16 @@ class ProduitController extends Controller
      */
     public function update(Request $request, Produit $produit)
     {
-        $produit->image = $request->image-store('','image');
+        $produit->image = $request->image->store('','image');
         $produit->name = $request->name;
         $produit->description = $request->description;
         $produit->prix = $request->prix;
 
         $produit->update();
 
-        $produit = Produit::all();
+        $produits = Produit::all();
 
-        return view ('produit',compact('produit'));
+        return view ('produit',compact('produits'));
 
     }
 
