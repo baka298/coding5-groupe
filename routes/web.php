@@ -23,7 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Newsletter
 
 Route::get('/newsletter', function(){
-    return view('newsletter.newsletter')->name('mail');
-});
+    return view('newsletter.newsletter');
+})->name('mail');
 
 Route::post('/newsletter/send', 'NewsletterController@mail')->name('submitMail');
+
+Route::get('/newsletter/abonnes', 'NewsletterController@show')->name('abonnes');

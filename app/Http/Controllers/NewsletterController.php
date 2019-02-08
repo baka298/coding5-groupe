@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Newsletter;
 use Illuminate\Http\Request;
 use App\Events\MailEvent;
+use App\Http\Requests\MailNewsletter;
+
 
 
 class NewsletterController extends Controller
@@ -48,7 +50,8 @@ class NewsletterController extends Controller
      */
     public function show(Newsletter $newsletter)
     {
-        //
+        $newsletter= Newsletter::all();
+        return view('newsletter.abonnes', compact('newsletter'));
     }
 
     /**
@@ -86,6 +89,12 @@ class NewsletterController extends Controller
     }
 
     public function mail(MailNewsletter $request){
+        $newnewsletter= new Newsletter;
+        $newnewsletter->name=$request->name;
+        $newnewsletter->email=$request->email;
+        $newnewsletter->save();
+        event(new MailEvent($request));
+        return view('newsletter.newsletter');
 
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
 use App\Mail\NewsletterMail;
 
+
 class MailListener
 {
     /**
@@ -28,6 +29,6 @@ class MailListener
      */
     public function handle(MailEvent $event)
     {
-        //
+        Mail::to($event->request)->send(new NewsletterMail($event->request));
     }
 }
