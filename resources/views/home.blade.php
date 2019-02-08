@@ -3,9 +3,11 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>HOME</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <p>WELCOME!</p>
+
+<a href="{{route('produit.index')}}" class="btn btn-danger">Produit</a>
 @stop
