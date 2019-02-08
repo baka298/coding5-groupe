@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'GROUPE: 5',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>GROUPE5</b>WAZO',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>G5</b>WZ',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'purple',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,65 +108,73 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
-        [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
+            'text'    => 'UTILISATEUR',
+            'icon'    => 'users',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Nos utilisateurs',
+                    'url'  => 'users',
                 ],
                 [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Création d\'utilisateurs',
+                    'url'  => 'user-create',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'ROLE',
+            'icon'    => 'lock',
+            'submenu' => [
+                [
+                    'text' => 'Nos Roles',
+                    'url'  => 'roles',
                 ],
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Création de Roles',
+                    'url'  => 'role-create',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'Blog',
+            'icon'    => 'newspaper-o',
+            'submenu' => [
+                [
+                    'text' => 'Nos articles',
+                    'url'  => 'blogs',
+                ],
+                [
+                    'text' => 'Création d\'articles',
+                    'url'  => 'article-create',
+                ],
+                [
+                    'text' => 'Nos newsletter',
+                    'url'  => 'article-newsletter',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'E-SHOP',
+            'icon'    => 'shopping-cart',
+            'submenu' => [
+                [
+                    'text' => 'Nos produits',
+                    'url'  => 'produits-all',
+                ],
+                [
+                    'text' => 'Création de produit',
+                    'url'  => 'produits/create',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'QUESTION',
+            'icon'    => 'shopping-cart',
+            'submenu' => [
+                [
+                    'text' => 'Nos quesitons',
+                    'url'  => 'question-all',
                 ],
             ],
         ],
