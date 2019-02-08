@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produit;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\StoreProduit;
 class ProduitController extends Controller
 {
     /**
@@ -34,7 +34,7 @@ class ProduitController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProduit $request)
     {
         $newproduit= new Produit;
         $newproduit->image = $request->image->store('','image');
@@ -75,7 +75,7 @@ class ProduitController extends Controller
      * @param  \App\Produit  $produit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produit $produit)
+    public function update(StoreProduit $request, Produit $produit)
     {
         $produit->image = $request->image->store('','image');
         $produit->name = $request->name;
