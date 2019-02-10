@@ -8,4 +8,6 @@
 
 @section('content')
     <p>You are logged in!</p>
+
+    <a href="{{ route('user.index') }}" class="btn btn-primary">USERS</a>
 @stop
