@@ -10,7 +10,14 @@
 
 <form action ="{{route('article.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
-
+    <div class="form-group" style="width:20%;">
+      <label for="technologie_id">Catégorie de l'Article :</label>
+      <select class="form-control" name="technologie_id">
+        @foreach ($tech as $item)
+        <option value="{{$item->id}}">{{$item->name}}</option>
+        @endforeach
+      </select>
+    </div>
     <div class="form-group">
       <label for="titre">Title</label>
       <input type="text"
@@ -27,5 +34,6 @@
 
     <button class="btn btn-success mr-2" type="submit">submit</button>
 </form>
+<br>
     <a href="{{route('article.index')}}"><button class="mt-3 btn btn-primary">Go Back</button></a>
 @stop

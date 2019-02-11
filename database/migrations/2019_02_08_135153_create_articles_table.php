@@ -20,6 +20,8 @@ class CreateArticlesTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->nullable();
+            $table->unsignedInteger('technologie_id')->nullable();
+            $table->foreign('technologie_id')->references('id')->on('technologies')->nullable();
             $table->timestamps();
         });
     }

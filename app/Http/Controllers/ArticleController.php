@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Technologie;
 use App\Services\Intervention;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
-        return view('article', compact('articles'));
+        $tech = Technologie::all();
+        return view('article', compact('articles', 'tech'));
     }
 
     /**
@@ -27,7 +29,8 @@ class ArticleController extends Controller
     public function create()
     {
         $articles = Article::all();
-        return view('article.article-create', compact('articles'));   
+        $tech = Technologie::all();
+        return view('article.article-create', compact('articles', 'tech'));   
     }
 
     /**
@@ -44,9 +47,12 @@ class ArticleController extends Controller
         $image->save();
         $newa ->titre =$request ->titre;
         $newa ->texte =$request ->texte;
+
+        $newa ->technologie_id=$request->technologie_id;
         $newa->save();
         $articles = Article::all();
-        return view('article', compact('articles'));
+        $tech = Technologie::all();
+        return view('article', compact('articles', 'tech'));
     }
 
     /**
