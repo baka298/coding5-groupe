@@ -3,9 +3,9 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Page D'Accueil</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <a href="{{route('article.index')}}"><button class="btn btn-warning">Articles Index</button></a>
 @stop
