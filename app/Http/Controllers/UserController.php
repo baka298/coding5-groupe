@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
+use App\Profil;
 use Auth;
 use App\Http\Requests\StoreUser;
 use App\Http\Requests\UpdateUser;
@@ -26,7 +28,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('user.user-create');
+        $roles = Role::all();
+        return view('user.user-create', compact('roles'));
     }
 
     /**
@@ -36,12 +39,20 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreUser $request) {
+
         $newuser = new User;
-        $newuser->name = $request->name;
         $newuser->email = $request->email;
-        $newuser->password = $request->password;
+        $newuser->password = bcrypt($request->password);
+        $newuser->role_id = $request->role;
         $newuser->save();
-        return view('home');
+        
+        //create profil while creating user account
+        $profil = new Profil;
+        $profil->user_id = $newuser->id;
+        $profil->save();
+
+        $user = User::all();
+        return view('user.user', compact('user'));
     }
 
     /**

@@ -16,6 +16,7 @@
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Actions</th>
+            <th scope="col">Profil</th>
          </tr>
       </thead>
         
@@ -28,8 +29,13 @@
             <td>
                <a href="{{route('user.edit',['id'=>$user->id])}}" class="btn btn-warning">EDIT</a>
             </td>
+
+            <td><a href="{{ route('profil.index')}}" class="btn btn-primary">PROFIL</a></td>
          </tr>
       </tbody>
+
+      
+
    </table>
 
    <a href="{{ route('home')}}" class="btn btn-secondary mt-1 mr-2">HOME</a>

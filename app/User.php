@@ -42,4 +42,12 @@ class User extends Authenticatable
     ];
 
     protected $dates = ['deleted_at'];
+
+    public function role() {
+        return $this->belongsTo('App\Role','role_id','id');
+    }
+
+    public function profil() {
+        return $this->hasOne('App\Profil');
+    }
 }

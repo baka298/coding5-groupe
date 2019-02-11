@@ -42,7 +42,7 @@
                         <div class="text-danger">{{$error}}</div>
                      @endforeach
                   @endif 
-                  <input type="text" name="email" value='{{old('name',$user->email)}}'>
+                  <input type="text" name="email" value='{{old('email',$user->email)}}'>
                </td>
                
                <td>
@@ -51,7 +51,7 @@
                         <div class="text-danger">{{$error}}</div>
                      @endforeach
                   @endif 
-                  <input type="text" name="password" value='{{old('name',$user->password)}}'>
+                  <input type="text" name="password" value='{{old('password',$user->password)}}'>
                </td>
                
                <td>

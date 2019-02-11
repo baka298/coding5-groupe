@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Profil;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateProfilRequest;
 
 class ProfilController extends Controller
 {
@@ -12,9 +14,9 @@ class ProfilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $profils = Profil::all();
+        return view('profil.profil', compact('profils'));
     }
 
     /**
@@ -22,9 +24,7 @@ class ProfilController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(User $user) {
     }
 
     /**
@@ -33,9 +33,7 @@ class ProfilController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
     }
 
     /**
@@ -44,9 +42,8 @@ class ProfilController extends Controller
      * @param  \App\Profil  $profil
      * @return \Illuminate\Http\Response
      */
-    public function show(Profil $profil)
-    {
-        //
+    public function show(Profil $profil) {
+        return view('profil.profil-show', compact('profil'));
     }
 
     /**
@@ -57,7 +54,7 @@ class ProfilController extends Controller
      */
     public function edit(Profil $profil)
     {
-        //
+        return view('profil.profil-edit', compact('profil'));
     }
 
     /**
@@ -67,9 +64,23 @@ class ProfilController extends Controller
      * @param  \App\Profil  $profil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profil $profil)
+    public function update(UpdateProfilRequest $request, Profil $profil)
     {
-        //
+        $profil->name = $request->name;
+        $profil->firstname = $request->firstname;
+        $profil->dateDeNaissance = $request->dateDeNaissance;
+        $profil->gsm = $request->gsm;
+        $profil->adresse = $request->adresse;
+        $profil->ville = $request->ville;
+        $profil->pays = $request->pays;
+
+        if(isset($request->image)){
+            $profil->image = $request->image->store('', 'profil');
+        }
+
+        $profil->save();
+
+        return view('home');
     }
 
     /**

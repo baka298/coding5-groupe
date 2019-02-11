@@ -15,6 +15,18 @@ class CreateProfilsTable extends Migration
     {
         Schema::create('profils', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->nullable();
+            $table->string('firstname')->nullable();
+            $table->string('gsm')->nullable();
+            $table->string('pays')->nullable();
+            $table->string('adresse')->nullable();
+            $table->string('ville')->nullable();
+            $table->string('image')->nullable();
+            $table->date('dateDeNaissance')->nullable();
+
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
@@ -26,6 +38,9 @@ class CreateProfilsTable extends Migration
      */
     public function down()
     {
+        Schema::table('profils', function(Blueprint $table) {
+            $table->dropForeign('profils_user_id_foreign');
+		});
         Schema::dropIfExists('profils');
-    }
+	}
 }

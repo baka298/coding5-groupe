@@ -8,15 +8,15 @@
 
 @section('content')
 
-   <form action="{{ route ('user.store')}}" method="POST">
+   <form action="{{ route('user.store')}}" method="POST">
       @csrf
    
       <table class="table">
          <thead class="thead-dark">
             <tr>
-               <th scope="col">Name</th>
                <th scope="col">Email</th>
                <th scope="col">Password</th>
+               <th scope="col">Role</th>
                <th scope="col">Actions</th>
             </tr>
          </thead>
@@ -24,15 +24,7 @@
          <tbody>
             <tr>
                <td>
-                  <input type="text" name="name">
-                  @if($errors->has('name'))
-                     @foreach($errors->get('name') as $error)
-                        <div class="text-danger">{{ $errors->first('name')}}</div>
-                     @endforeach
-                  @endif
-               </td>
-               <td>
-                  <input type="text" name="email">
+                  <input type="text" class="form-control" placeholder="email" name="email" value="{{old('email')}}">
                   @if($errors->has('email'))
                      @foreach($errors->get('email') as $error)
                         <div class="text-danger">{{ $errors->first('email')}}</div>
@@ -40,12 +32,24 @@
                   @endif
                </td>
                <td>
-                  <input type="text" name="password">
+                  <input type="password" class="form-control" placeholder="password" name="password">
                   @if($errors->has('password'))
                      @foreach($errors->get('password') as $error)
                         <div class="text-danger">{{ $errors->first('password')}}</div>
                      @endforeach
                   @endif
+               </td>
+               <td>
+                  <select name="role" class="custom-select">
+                     @foreach ($roles as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                     @endforeach
+                  </select>
+                  @if($errors->has('role'))
+                     @foreach($errors->get('role') as $error)
+                        <div class="text-danger">{{ $errors->first('role')}}</div>
+                     @endforeach
+                  @endif                  
                </td>
                <td>
                   <button class="btn btn-warning" type="submit">CREATE</button>

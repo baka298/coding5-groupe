@@ -13,6 +13,7 @@
          <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Role</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col"></th>
@@ -25,6 +26,7 @@
             <tr>
                <th scope="row">{{ $item->id }}</th>
                <td>{{ $item->name }}</td>
+               <td>{{ $item->role->name }}</td>
                <td>{{ $item->email }}</td>
                <td>********</td>
                <td>
@@ -45,7 +47,7 @@
       @endforeach
    </table>
 
-    <a href="{{ route('home') }}" class="btn btn-secondary">HOME</a>
-    <a href="{{ route('user.create')}}" class="btn btn-info ml-3">CREATE USER</a>
+   <a href="{{ route('home') }}" class="btn btn-secondary">HOME</a>
+   <a href="{{ route('user.create')}}" class="btn btn-info ml-3">CREATE USER</a>
 
 @stop
