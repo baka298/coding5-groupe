@@ -11,5 +11,11 @@
 
     <a href="{{ route('user.index') }}"><button type="button" class="btn btn-secondary">Liste des Utilisateurs</button></a>
     <a href="{{ route('user.create') }}"><button type="button" class="btn btn-secondary">Créer un Utilisateur</button></a>
+    <a href="{{ route('profil.index') }}"><button type="button" class="btn btn-secondary">Liste des profiles</button></a>
+    <a href="{{ route('profil.create') }}"><button type="button" class="btn btn-secondary">Creation d'un profil</button></a>
+    <a href="{{ route('role.index') }}"><button type="button" class="btn btn-secondary">Liste des rôles</button></a>
+    <a href="{{ route('role.create') }}"><button type="button" class="btn btn-secondary">Creation d'un rôle</button></a>
+    <a href="{{ route('mailform') }}"><button type="button" class="btn btn-secondary">Newsletter</button></a>
+    
    
 @stop

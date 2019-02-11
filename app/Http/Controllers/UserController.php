@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Events\NewsletterMailEvent;
+
 
 class UserController extends Controller
 {
@@ -52,5 +54,11 @@ class UserController extends Controller
         $all->delete();
         return redirect()->back();
     }
+    public function mail(Request $request){
+        event(new NewsletterMailEvent($request));
+
+        return redirect()->back();
+    }
+    
 
 }

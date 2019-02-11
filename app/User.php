@@ -38,4 +38,13 @@ class User extends Authenticatable
     ];
 
     protected $table ='users';
+
+    public  function  role()
+
+{
+
+return  $this->belongsTo('App\Role','role_id','id');
+
+
+}
 }

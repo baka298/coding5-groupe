@@ -16,7 +16,17 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+// La route vers la HomePage
 Route::get('/home', 'HomeController@index')->name('home');
+// La Route vers les différentes pages Users
+Route::resource('user', 'UserController');
+// La Route vers les différentes pages Profils
+Route::resource('profil', 'ProfilController');
+// La Route vers les différentes pages Role
+Route::resource('role', 'RoleController');
 
-Route::resource('/user', 'UserController');
+Route::get('/mailform',function () {
+    return view('Mails.mailform');
+});
+
+Route::post('/mailform','UserController@mail')->name('mailform');
