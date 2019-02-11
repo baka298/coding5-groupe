@@ -8,7 +8,7 @@
 
 @section('content')
 
-   <form action="{{ route ('user.update', ['user'=>$user->id])}}" method="POST">
+   <form action="{{ route ('user.update', ['user'=>$user->id])}}" method="POST" >
       @method('PUT')
       @csrf
    
@@ -28,30 +28,30 @@
                <th scope="row">{{$user->id}}</th>
                
                <td>
-                  @if($errors->has('name'))
-                     @foreach($errors->get('name') as $error)
+                  <input type="text" name="firstname" value='{{old('firstname',$user->firstname)}}'>
+                  @if($errors->has('firstname'))
+                     @foreach($errors->get('firstname') as $error)
                         <div class="text-danger">{{$error}}</div>
                      @endforeach
                   @endif   
-                  <input type="text" name="name" value='{{old('name',$user->name)}}'>
                </td>
 
                <td>
+                  <input type="text" name="email" value='{{old('email',$user->email)}}'>
                   @if($errors->has('email'))
                      @foreach($errors->get('email') as $error)
                         <div class="text-danger">{{$error}}</div>
                      @endforeach
                   @endif 
-                  <input type="text" name="email" value='{{old('email',$user->email)}}'>
                </td>
                
                <td>
+                  <input type="text" name="password" value='{{old('password',$user->password)}}'>
                   @if($errors->has('password'))
                      @foreach($errors->get('password') as $error)
                         <div class="text-danger">{{$error}}</div>
                      @endforeach
                   @endif 
-                  <input type="text" name="password" value='{{old('password',$user->password)}}'>
                </td>
                
                <td>

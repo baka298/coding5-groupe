@@ -13,8 +13,9 @@
                   <h5 class="card-title">{{ $product->name }}</h5>
                   <p class="card-text">{{ $product->description }}</p>
                   <h5 class="card-text" style="text-align:right; color:blue;"><b>{{ $product->price }} €</b></h5>
-                  
-                  
+               
+                  <a href="{{route('product.edit',['id'=>$product->id])}}" class="btn btn-warning mr-1 mt-4">EDIT</a>
+               
                </div>
             </div>
          </div>

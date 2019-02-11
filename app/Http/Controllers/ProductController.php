@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateProduct;
+use App\Http\Requests\StoreProduct;
 
 class ProductController extends Controller
 {
@@ -22,9 +24,8 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view('product.product-create');
     }
 
     /**
@@ -33,9 +34,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(StoreProduct $request) {
+        $newproduct = new Product;
+        $newproduct->name = $request->name;
+        $newproduct->price = $request->price;
+        $newproduct->photo = $request->photo->store('', 'product');
+        $newproduct->description = $request->description;
+        $newproduct->save();
+
+        $product = Product::all();
+        return view('product.product', compact('product'));
     }
 
     /**
@@ -54,9 +62,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
-    {
-        //
+    public function edit(Product $product) {
+        return view('product.product-edit', compact('product'));
     }
 
     /**
@@ -66,9 +73,13 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
-    {
-        //
+    public function update(UpdateProduct $request, Product $product) {
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->photo = $request->photo->store('', 'product');
+	    $product->save();
+	    return view('home', compact('product'));
     }
 
     /**

@@ -24,6 +24,7 @@ class StoreUser extends FormRequest
     public function rules()
     {
         return [
+            'firstname'=>'required|max:30|min:3',
             'email'=>'required|email',
             'password'=>'required|max:10|min:5',
             'role' => 'required|numeric'
@@ -32,9 +33,9 @@ class StoreUser extends FormRequest
 
     public function messages() {
         return[
-            'name.required'=>'Entrez un nom.',
-            'name.min'=>'3 caractères minimum',
-            'name.max'=>'Moins de 30 caractères',
+            'firstname.required'=>'Entrez un nom.',
+            'firstname.min'=>'3 caractères minimum',
+            'firstname.max'=>'Moins de 30 caractères',
             'email.required'=>'Entrez un email.',
             'email.email'=>'Entrez un email.',
             'password.required'=>'Entrez un mot de passe.',

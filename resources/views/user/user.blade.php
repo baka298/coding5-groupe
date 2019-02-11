@@ -12,7 +12,7 @@
       <thead class="thead-dark">
          <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
+            <th scope="col">Firstame</th>
             <th scope="col">Role</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
@@ -25,7 +25,7 @@
          <tbody>
             <tr>
                <th scope="row">{{ $item->id }}</th>
-               <td>{{ $item->name }}</td>
+               <td>{{ $item->firstname }}</td>
                <td>{{ $item->role->name }}</td>
                <td>{{ $item->email }}</td>
                <td>********</td>

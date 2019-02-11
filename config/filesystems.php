@@ -60,6 +60,12 @@ return [
             'url' => env('APP_URL').'/storage/profil',
             'visibility' => 'public',
         ],
+        'product' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/product'),
+            'url' => env('APP_URL').'/storage/product',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
