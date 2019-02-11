@@ -3,7 +3,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>NEW PRODUITS</h1>
+    <h1>QUESTION REPONSE</h1>
 @stop
 
 @section('content')

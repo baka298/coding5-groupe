@@ -137,7 +137,7 @@ return [
             ],
         ],
         [
-            'text'    => 'Blog',
+            'text'    => 'BLOG',
             'icon'    => 'newspaper-o',
             'submenu' => [
                 [
@@ -175,6 +175,27 @@ return [
                 [
                     'text' => 'Nos quesitons',
                     'url'  => 'question-all',
+                    'can' => 'manager_eshop'
+                ],
+            ],
+        ],
+        [
+            'text'    => 'PARTENARIAT',
+            'icon'    => 'bug',
+            'submenu' => [
+                [
+                    'text' => 'Nos demandes de partenariat',
+                    'url'  => 'partenariat-all',
+                ],
+            ],
+        ],
+        [
+            'text'    => 'CONTACT',
+            'icon'    => 'bug',
+            'submenu' => [
+                [
+                    'text' => 'Nos demandes de contact',
+                    'url'  => 'contact-all',
                 ],
             ],
         ],

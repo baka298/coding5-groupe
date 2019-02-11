@@ -20,7 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/produits', 'ProduitController');
 Route::resource('/question', 'QuestionController');
+Route::resource('/partenariat', 'PartenariatController');
+Route::resource('/contact', 'ContactController');
 Route::get('/produits-all', 'ProduitController@all');
 Route::get('/question-all', 'QuestionController@all');
+Route::get('/partenariat-all', 'PartenariatController@all');
+Route::get('/contact-all', 'ContactController@all');
+
 
 

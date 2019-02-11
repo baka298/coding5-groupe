@@ -7,5 +7,11 @@
     <a href="{{url('/question')}}" class="btn btn-primary">
         Vos questions
     </a>
+    <a href="{{route('partenariat.index')}}" class="btn btn-primary">
+        Demande de partenariat
+    </a>
+    <a href="{{url('/contact')}}" class="btn btn-primary">
+        Formulaire de contact
+    </a>
     </div>
 @endsection

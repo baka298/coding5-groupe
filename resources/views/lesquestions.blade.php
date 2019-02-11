@@ -19,25 +19,27 @@
        <div class="row">
            @foreach ($tableau as $item)
            <div class="col-lg-3 ml-2 mt-2">
-                <div class="card">
-                    <h5 class="card-header">Question # {{$item->id}}</h5>
-                        <div class="card-body">
-                          <h5 class="card-title">{{$item->question}}</h5>
-                            @if ($item->reponse)
-                                {{$item->reponse}}
-                                <div class="text-right">
-                                    <i>
-                                        Traité par Admin
-                                    </i>
-                                </div>
-                            @else
-                            <div class="reponse">
-                                <i>Aucune réponse</i>
-                            </div>
-                            @endif
-
+               @if ($item->reponse)                
+               <div class="card">
+                   <h5 class="card-header">Question # {{$item->id}}</h5>
+                   <div class="card-body">
+                       <h5 class="card-title">{{$item->question}}</h5>
+                       @if ($item->reponse)
+                       {{$item->reponse}}
+                       <div class="text-right">
+                           <i>
+                               Traité par Admin
+                            </i>
                         </div>
-                      </div>
+                        @else
+                        <div class="reponse">
+                            <i>Aucune réponse</i>
+                        </div>
+                        @endif
+                        
+                    </div>
+                </div>
+                @endif
             </div>
             @endforeach
         </div>
