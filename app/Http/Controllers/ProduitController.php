@@ -61,7 +61,7 @@ class ProduitController extends Controller
      */
     public function show(Produit $produit)
     {
-        return view('produits/produit-show',compact('produit'));
+        return view('produits.produit-show',compact('produit'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProduitController extends Controller
      */
     public function edit(Produit $produit)
     {
-        return view ("produits/produit-edit",compact('produit'));
+        return view ("produits.produit-edit",compact('produit'));
     }
 
     /**
