@@ -15,7 +15,8 @@
     <a href="{{ route('profil.create') }}"><button type="button" class="btn btn-secondary">Creation d'un profil</button></a>
     <a href="{{ route('role.index') }}"><button type="button" class="btn btn-secondary">Liste des rôles</button></a>
     <a href="{{ route('role.create') }}"><button type="button" class="btn btn-secondary">Creation d'un rôle</button></a>
-    <a href="{{ route('mailform') }}"><button type="button" class="btn btn-secondary">Newsletter</button></a>
+    <a href="{{ route('mailform') }}"><button type="button" class="btn btn-secondary">Envoyé un mail</button></a>
+    <a href="{{ route('newsletter.create') }}"><button type="button" class="btn btn-secondary">Newsletter</button></a>
     
    
 @stop

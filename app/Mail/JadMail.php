@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Mail\JadMail;
 
+
 class JadMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -29,6 +30,6 @@ class JadMail extends Mailable
      */
     public function build()
     {
-        return $this->from('exemple@exemple.com')->view('Mails.mail');
+        return $this->from('jad.riahi12@gmail.com')->view('Mails.mail');
     }
 }

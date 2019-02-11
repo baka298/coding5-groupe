@@ -7,6 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Mail;
 use App\Mail\JadMail;
+use Illuminate\Support\Facades\DB;
 
 class NewsletterMailListener
 {
@@ -28,6 +29,7 @@ class NewsletterMailListener
      */
     public function handle(NewsletterMailEvent $event)
     {
-        Mail::to('jad.riahi12@gmail.com')->send(new JadMail($event->request));
+        $query = DB::table('newsletters')->select('email')->get();
+        Mail::to($query)->send(new JadMail($event->request));
     }
 }

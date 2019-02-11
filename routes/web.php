@@ -24,6 +24,8 @@ Route::resource('user', 'UserController');
 Route::resource('profil', 'ProfilController');
 // La Route vers les différentes pages Role
 Route::resource('role', 'RoleController');
+// La Route vers les différentes page Newsletter
+Route::resource('newsletter', 'NewsletterController');
 
 Route::get('/mailform',function () {
     return view('Mails.mailform');
