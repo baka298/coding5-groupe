@@ -20,7 +20,7 @@
 	            <div class= "text-danger">{{$errors->first('image')}}</div> 
             @endforeach
           @endif 
-          <input type="file" class="form-control" name="image" id="" aria-describedby="helpId" placeholder="">
+          <input type="file" class="form-control {{$errors->has('image') ? 'border-danger':''}}" name="image" id="" aria-describedby="helpId" placeholder="" value="{{old('image')}}">
         
         </div>
         <div class="form-group">
@@ -40,7 +40,7 @@
 	            <div class= "text-danger">{{$errors->first('description')}}</div> 
             @endforeach
           @endif 
-          <textarea class="form-control" name="description" id="" rows="3"></textarea>
+          <textarea class="form-control  {{$errors->has('description') ? 'border-danger':''}}" name="description" id="" rows="3" value="{{old('description')}}"></textarea>
         </div>
         <div class="form-group">
           <label for="">Prix</label>
@@ -49,7 +49,7 @@
 	            <div class= "text-danger">{{$errors->first('prix')}}</div> 
             @endforeach
           @endif 
-          <textarea class="form-control" name="prix" id="" rows="3"></textarea>
+          <textarea class="form-control {{$errors->has('prix') ? 'border-danger':''}}" name="prix" id="" rows="3" value="{{old('prix')}}"></textarea>
         </div>
         <button class="btn btn-danger" type="submit">
           UPDATE
