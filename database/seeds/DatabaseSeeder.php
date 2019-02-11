@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
       
          $this->call(NewslettersTableSeeder::class);
+         $this->call(GalleriesTableSeeder::class);
 
     }
 }

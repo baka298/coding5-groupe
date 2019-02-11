@@ -29,3 +29,8 @@ Route::get('/newsletter', function(){
 Route::post('/newsletter/send', 'NewsletterController@mail')->name('submitMail');
 
 Route::get('/newsletter/abonnes', 'NewsletterController@show')->name('abonnes');
+
+//Gallery
+
+Route::resource('/gallery', 'GalleryController');
+
