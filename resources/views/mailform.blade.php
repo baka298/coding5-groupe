@@ -3,14 +3,12 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Contact</h1>
+    <h1>Nous-Contacter</h1>
 @stop
 
 @section('content')
-    <h4>Contact </h4>
-
-
-<form action="{{route('formulaire.store')}}" method='POST'>
+   
+<form action="{{route('form')}}" method='POST'>
    @csrf
     <div class="form-group">
       <label for="">First Name</label>
@@ -65,6 +63,8 @@
     <br>
     <button type="submit" class="btn-success">Submit</button>
 </form>
+   
+
 
 @stop
 

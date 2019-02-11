@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Formulaire;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreFormulaire;
+use App\Events\Mail;
+
 class FormulaireController extends Controller
 {
     /**
@@ -14,8 +16,7 @@ class FormulaireController extends Controller
      */
     public function index()
     {
-        $formulaires = Formulaire::all();
-        return view('formulaire',compact('formulaires'));
+        //
     }
 
     /**
@@ -25,7 +26,7 @@ class FormulaireController extends Controller
      */
     public function create()
     {
-        return view ('formulaire-create');
+        //
     }
 
     /**
@@ -36,15 +37,7 @@ class FormulaireController extends Controller
      */
     public function store(StoreFormulaire $request)
     {
-        $newform = new Formulaire;
-        $newform->name = $request->name;
-        $newform->lastname =$request->lastname;
-        $newform->email =$request->email;
-        $newform->telephone =$request->telephone;
-        $newform->question = $request->question;
-        $newform->save();
-
-        return view('home');
+        //
     }
 
     /**
@@ -90,5 +83,10 @@ class FormulaireController extends Controller
     public function destroy(Formulaire $formulaire)
     {
         //
+    }
+    public function mail(StoreFormulaire $request){  //vamos a crear una nueva function      
+
+            event (new Mail($request));
+            return redirect()->back();
     }
 }

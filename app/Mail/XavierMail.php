@@ -16,9 +16,9 @@ class XavierMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        $this->user = $user
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +28,6 @@ class XavierMail extends Mailable
      */
     public function build()
     {
-        return $this->from('xavier@xavier.com')->view('email.mail');
+        return $this->from('exogrp@hotmail.com')->view('email.mail');
     }
 }

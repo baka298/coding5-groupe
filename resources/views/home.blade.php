@@ -10,7 +10,8 @@
     <p>WELCOME!</p>
 
 <a href="{{route('produit.index')}}" class="btn btn-danger">Produit</a>
-<a href="{{route('formulaire.create')}}" class="btn btn-danger">Contact</a>
+
+<a href="{{route('mail')}}" class="btn btn-danger">Contact</a>
 
 
 @stop

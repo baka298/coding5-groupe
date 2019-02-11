@@ -24,4 +24,8 @@ Route::middleware('auth')->group(function () {
     
 });
 
+Route::get('/mail',function () {
+        return view('mailform');
+})->name('mail');
+Route::post('/mail/send','FormulaireController@mail')->name('form');
 
