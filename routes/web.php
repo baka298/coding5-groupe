@@ -34,3 +34,19 @@ Route::get('/newsletter/abonnes', 'NewsletterController@show')->name('abonnes');
 
 Route::resource('/gallery', 'GalleryController');
 
+//FAQ
+
+Route::get('/faq', 'FaqController@index')->name('faq');
+
+Route::get('/faq/question', 'FaqController@create')->name('question');
+Route::post('/faq/question/submit','FaqController@store')->name('questionsubmit');
+
+Route::delete('faq/delete/{faq}',  'FaqController@destroy')->name('delete');
+
+Route::get('/faq/answer/{faq}', 'FaqController@answer')->name('answer')
+;
+Route::put('/faq/answer/submit/{faq}','FaqController@answerStore')->name('answersubmit');
+
+Route::get('/faq/answer/{faq}/edit', 'FaqController@edit')->name('answeredit');
+Route::put('/faq/answer/{faq}/edit/submit','FaqController@update')->name('answereditsubmit');
+
