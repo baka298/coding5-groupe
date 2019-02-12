@@ -24,7 +24,7 @@ class StoreTech extends FormRequest
     public function rules()
     {
         return [
-            'categorie' => 'required|unique',
+            'categorie' => 'required',
         ];
     }
 }
