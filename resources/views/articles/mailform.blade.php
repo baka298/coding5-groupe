@@ -1,0 +1,1 @@
+<h3>L'article {{$article->name}} a été créé</h3>

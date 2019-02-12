@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+<a class="btn btn-primary" href="{{route('articles.index')}}">Check our articles</a>
 @stop
