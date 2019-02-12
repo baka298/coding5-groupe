@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/photo','PhotoController');
+Route::resource('/question','questionController');
+Route::get('/question-test', 'questionController@test')->name('qtest');
+Route::get('/photo-client', 'PhotoController@client')->name('client');
+
