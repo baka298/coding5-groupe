@@ -170,6 +170,24 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Events',
+            'icon'    => ' fa-calendar',
+            'submenu' => [
+                [
+                    'text' => 'All Events',
+                    'url'  => 'event',
+                    'icon' => ' fa-calendar-plus-o',
+
+                ],
+               
+                [
+                    'text' => 'Create Event',
+                    'url'  => 'event/create',
+                    'icon' => ' fa-plus-square-o',
+                ],
+            ],
+        ],
         'LABELS',
         [
             'text'       => 'Important',

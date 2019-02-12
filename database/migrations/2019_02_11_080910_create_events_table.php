@@ -23,6 +23,8 @@ class CreateEventsTable extends Migration
 
 
             $table->string('lieu');
+            $table->string('title');
+
             $table->string('desc');
             $table->softDeletes();
             

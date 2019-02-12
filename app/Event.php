@@ -10,5 +10,5 @@ class Event extends Model
 {
     use SoftDeletes;
     protected $table = "events";
-    protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at','start_date'];
 }

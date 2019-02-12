@@ -4,17 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
+    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
+
+    
     {
-        //
+        
+       $events = Event::all();
+
+       return view('events',compact('events'));
+
     }
 
     /**
@@ -24,7 +33,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events/event-create');
     }
 
     /**
@@ -35,7 +44,28 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = new Event;
+
+        $event->start_date  = $request->start_date ;
+        $event->end_date = $request->end_date;
+
+        $event->start_hours = $request->start_hours;
+        $event->end_hours = $request->end_hours;
+
+        $event->title = $request->title;
+        $event->desc = $request->desc;
+        $event->lieu  = $request->lieu ;
+
+
+        $event->save();
+
+        $events = Event::all();
+
+       return view('events',compact('events'));
+
+
+
+
     }
 
     /**
@@ -57,7 +87,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+      return view('events.event-edit',compact('event'));
     }
 
     /**
@@ -69,7 +99,24 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->start_date = $request->start_date;
+        $event->end_date = $request->end_date;
+        $event->start_hours = $request->start_hours;
+        $event->end_hours = $request->end_hours;
+        $event->lieu = $request->lieu;
+        $event->title = $request->title;
+        $event->desc = $request->desc;
+        $event->save();
+
+        $events = Event::all();
+
+        return view('events',compact('events'));
+
+
+
+
+
+
     }
 
     /**
@@ -80,6 +127,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        $events = Event::all();
+
+        return view('events',compact('events'));
     }
 }

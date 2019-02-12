@@ -19,5 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/produit', 'ProduitController');
+Route::resource('/event', 'EventController');
+
 
 

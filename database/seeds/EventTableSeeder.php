@@ -21,7 +21,8 @@ class EventTableSeeder extends Seeder
             'end_hours'     => '17h25',
 
             'lieu'     => 'Bruxelles',
-            'desc'     => 'Hackathon',
+            'title'     => 'Hackathon',
+            'desc'     => 'Hackathon à Molengeek',
 
 
 
