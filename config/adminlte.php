@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'GROUPE: 5',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>GROUPE5</b>WAZO',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>G5</b>WZ',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'yellow',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,80 +108,85 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],
-        [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
+            'text'    => 'UTILISATEUR',
+            'icon'    => 'users',
             'submenu' => [
                 [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Nos utilisateurs',
+                    'url'  => 'users',
                 ],
                 [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
+                    'text' => 'Création d\'utilisateurs',
+                    'url'  => 'user-create',
                 ],
             ],
         ],
-        'LABELS',
         [
-            'text'       => 'Important',
-            'icon_color' => 'red',
+            'text'    => 'ROLE',
+            'icon'    => 'lock',
+            'submenu' => [
+                [
+                    'text' => 'Nos Roles',
+                    'url'  => 'roles',
+                ],
+                [
+                    'text' => 'Création de Roles',
+                    'url'  => 'role-create',
+                ],
+            ],
         ],
         [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
+            'text'    => 'Blog',
+            'icon'    => 'newspaper-o',
+            'submenu' => [
+                [
+                    'text' => 'Nos articles',
+                    'url'  => 'articles',
+                ],
+                [
+                    'text' => 'Nos photos',
+                    'url'  => 'photos',
+                ],
+                [
+                    'text' => 'Nos technologies',
+                    'url'  => 'techs',
+                ],
+                [
+                    'text' => 'Nos newsletter',
+                    'url'  => 'newsletters',
+                ],
+                [
+                    'text' => 'Création de newsletters',
+                    'url'  => 'newsletters/create',
+                ],
+                [
+                    'text' => 'Création de photos',
+                    'url'  => 'photos/create',
+                ],
+                [
+                    'text' => 'Création d\'articles',
+                    'url'  => 'articles/create',
+                ],
+                [
+                    'text' => 'Création de technologies',
+                    'url'  => 'techs/create',
+                ],
+            ],
         ],
         [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
+            'text'    => 'E-SHOP',
+            'icon'    => 'shopping-cart',
+            'submenu' => [
+                [
+                    'text' => 'Nos produits',
+                    'url'  => 'produits',
+                ],
+                [
+                    'text' => 'Création de produit',
+                    'url'  => 'produit-create',
+                ],
+            ],
         ],
     ],
 

@@ -17,4 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('/articles', 'ArticleController')->middleware('auth');
+Route::resource('/photos','PhotoController')->middleware('auth');
+Route::resource('/techs','TechController')->middleware('auth');
+Route::resource('/newsletters','NewsletterController')->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/mail',function() {
+    return view ('mail');
+})->name('mail');
+Route::post('/mail/send','HomeController@mail')->name('form');
