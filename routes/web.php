@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::resource('/roles', 'RoleController');
+    Route::resource('/users', 'userController');
+    Route::resource('/profils', 'ProfilController');
+    Route::resource('/events', 'EventController');
+});
+
+Route::get('/users/{user}/block', 'userController@block')->name('users.block');
+Route::get('/users/{user}/deblock', 'userController@deblock')->name('users.deblock');
+
+Route::get('/mail', function() {
+	return view('mailform');
+	});
+Route::post('/mail/send', 'HomeController@mail')->name('mail');

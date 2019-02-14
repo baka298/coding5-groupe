@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // protected function credentials(Request $Request){
+    //     $credentials = $Request->only($this->username(),'password'); //getting data from login form
+    //     return array_add($credentials,'isBan',0); //0 means can login
+    // }
+
+    protected function credentials(\Illuminate\Http\Request $request)
+    {
+        $credentials = $request->only($this->username(), 'password');
+        return array_add($credentials, 'status', '1');
+    }
 }
